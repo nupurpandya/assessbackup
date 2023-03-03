@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assessment 2</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="form-content">
+      
+        <div class="header">
+          <div class="dropdown">
+            <button class="dropbtn">Status</button>
+            <div class="dropdown-content">
+              <a href="#">Open</a>
+              <a href="#">Error</a>
+              <a href="#">Inactive</a>
+              <a href="#">Success</a>
+            </div>
+          </div>
+          <button class="addcustomerdecor">Add Customer</button>
+        </div>
+        <div>
+            <form>
+                <div class="firstrow">
+                  <div>
+                    <label for="fname1" class="labeldecor">Name:*</label>
+                    <input type="text" name="fname" id="fname" placeholder=" Enter Name" class="inputdecor">
+                    <div id="fnametext"></div>
+                  </div>
+                  <div>
+                    <label for="desc1" class="labeldecor">Description:*</label>
+                    <input type="text" name="desc" id="desc" placeholder=" Enter Description" class="inputdecor">
+                    <div id="desctext"></div>
+                  </div>
+                  <div>
+                    <label for="status1" class="labeldecor">Select Status:*</label>
+                    <select id="statusselect" name="status" class="inputdecor">
+                      <option value="Status">Status</option>
+                      <option value="open">Open</option>
+                      <option value="error">Error</option>
+                      <option value="success">Success</option>
+                      <option value="inactive">Inactive</option>
+                    </select>
+                    <div id="statustext"></div>
+                  </div>
+                    </div>
+                <div class="secondrow">
+                  <div>
+                    <label for="rate1" class="labeldecor">Rate:*</label>
+                    <input type="text" name="rate" id="rate" placeholder=" Enter Rate" class="inputdecor">
+                    <div id="ratetext"></div>
+                  </div>
+                  <div>
+                    <label for="balance1" class="labeldecor">Balance:*</label>
+                    <input type="text" name="balance" id="balance" placeholder=" Enter Balance" class="inputdecor">
+                    <div id="balancetext"></div>
+                  </div>
+                  <div>
+                    <label for="deposit1" class="labeldecor">Deposit:*</label>
+                    <input type="text" name="deposit" id="deposit" placeholder=" Enter Deposit" class="inputdecor">
+                    <div id="deposittext"></div>
+                  </div>
+                  </div>
+                  <div class="btnaddcancel">
+                    <button class="btncancel">Cancel</button>
+                    <button class="btnsave" id="buttonadd">Save</button>
+                    <button type="reset" class="btnupdate" id="updatebtn">Update</button>
+                  </div>
+                </form>
+              </div>
+              <label for="searchviastatus" class="labeldecor">Search with values:</label>
+              <input type="text" name="" id="searchinput" placeholder="Filter Records Through Status" onkeyup="searchFunction()" class="inputdecor">
+          </div>
+          <script src="index.js"></script>
+        </body>
+</html>

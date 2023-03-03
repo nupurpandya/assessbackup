@@ -1,0 +1,173 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    font-family: sans-serif;
+}
+:root{
+    --grey-700:#48505E;
+}
+.labeldecor{
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--grey-700);
+}
+.inputdecor{
+    width: 314px;
+    height: 32px;
+    border: 2px solid #dee2e6;
+    outline: 0;
+    border-radius: .375rem;
+}
+.inputdecor:hover{
+    box-shadow: 0 0 10px #b1afaf; 
+}
+.inputdecor::placeholder{
+    color: var(--grey-700);
+    padding: 5px;
+    font-weight: 400;
+    font-size: 16px;
+   
+}
+tr:nth-child(even){
+    background-color: #EBF0FA;
+}
+td:nth-child(6){
+    color: #D12953;
+}
+.btncancel{
+    width: 100px;
+    height: 47px;
+    background-color: #666666;
+    color: white;
+    border: none;
+    margin-right: 15px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+.btnsave{
+    width: 100px;
+    height: 47px;
+    background-color: blue;
+    color: white;
+    border: none;
+    margin-right: 15px;
+}
+.btnupdate{
+    width: 100px;
+    height: 47px;
+    background-color: #666666;
+    color: white;
+    border: none;
+    margin-right: 15px;
+}
+.firstrow{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 25px;
+}
+.secondrow{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 35px;
+    margin-right: 85px;
+}
+.addcustomerdecor{
+    background-color:   #04AA6D;
+    border: none;
+    padding: 5px;
+    color: white;
+}
+.form-content{
+    padding: 20px;
+}
+.btnaddcancel{
+    margin-top: 20px;
+    display: flex;
+    justify-content: end;
+}
+.table-class-design{
+    width: 100%;
+}
+th{
+    text-align: left;
+    color: var(--grey-700);
+    font-weight: 600;
+    font-size: 20px;
+}
+td{
+    color: #171C26;
+    font-weight: 500;
+    font-size: 18px;
+}
+.btneditdecor{
+    background-color: rgb(65, 220, 225);
+    width: 100px;
+    height: 47px;
+    border: none;
+    margin-right: 10px;
+    font-size: 20px;
+    color: white;
+}
+.btndeletedecor{
+    background-color: rgb(65, 225, 140);
+    width: 100px;
+    height: 47px;
+    border: none;
+    font-size: 20px;
+    color: white;
+}
+
+.dropbtn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+  
+ 
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+ 
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+
+  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+  @media(max-width:1000px){
+    
+   .form-content{
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
+   }
+
+}
