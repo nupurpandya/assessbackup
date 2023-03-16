@@ -6,19 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assessment 2</title>
     <link rel="stylesheet" href="./css/style.css" />
+  
   </head>
   <body>
     <div class="form-content">
       
         <div class="header">
           <div class="dropdown">
-            <button class="dropbtn">Status</button>
-            <div class="dropdown-content">
-              <a href="#">Open</a>
-              <a href="#">Error</a>
-              <a href="#">Inactive</a>
-              <a href="#">Success</a>
-            </div>
+
+            <select id="filterr" name="status" onchange="filterRecords()"class="statusdropdown">
+              <option value="Status">Status</option>
+              <option value="open">open</option>
+              <option value="error">Error</option>
+              <option value="success">Success</option>
+              <option value="inactive">Inactive</option>
+            </select>
           </div>
           <button class="addcustomerdecor">Add Customer</button>
         </div>
@@ -37,9 +39,9 @@
                   </div>
                   <div>
                     <label for="status1" class="labeldecor">Select Status:*</label>
-                    <select id="statusselect" name="status" class="inputdecor">
+                    <select id="statusselect" name="status" class="inputdecor" >
                       <option value="Status">Status</option>
-                      <option value="open">Open</option>
+                      <option value="open">open</option>
                       <option value="error">Error</option>
                       <option value="success">Success</option>
                       <option value="inactive">Inactive</option>

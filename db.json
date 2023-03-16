@@ -64,25 +64,7 @@
       "id": 15
     },
     {
-      "fname": "Raj",
-      "desc": "addfsa",
-      "statusselect": "open",
-      "rate": "$123",
-      "balance": "$70000",
-      "deposit": "$6666",
-      "id": 16
-    },
-    {
-      "fname": "Nirali",
-      "desc": "sadfsd",
-      "statusselect": "success",
-      "rate": "$565",
-      "balance": "-$8000",
-      "deposit": "$3500",
-      "id": 17
-    },
-    {
-      "fname": "Jinal",
+      "fname": "Roshni",
       "desc": "Its been",
       "statusselect": "error",
       "rate": "$456",
@@ -98,6 +80,33 @@
       "balance": "5000",
       "deposit": "45545",
       "id": 20
+    },
+    {
+      "fname": "Prathmesh",
+      "desc": "heyyy",
+      "statusselect": "open",
+      "rate": "$123",
+      "balance": "$100000",
+      "deposit": "$45545",
+      "id": 21
+    },
+    {
+      "fname": "Anshumi",
+      "desc": "fsdfsd",
+      "statusselect": "open",
+      "rate": "$567",
+      "balance": "$666",
+      "deposit": "$700",
+      "id": 22
+    },
+    {
+      "fname": "Julie S",
+      "desc": "sfs",
+      "statusselect": "open",
+      "rate": "$123",
+      "balance": "$4000",
+      "deposit": "$5000",
+      "id": 23
     }
   ]
 }

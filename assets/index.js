@@ -94,9 +94,9 @@ btn.addEventListener("click", (e) => {
       .then((data) => console.log(data));
     
   }
-  if(document.getElementById("selectstatus").value=="open"){
-    document.getElementById("selectstatus").value.style.color="red";
-  }
+  // if(document.getElementById("selectstatus").value=="open"){
+  //   document.getElementById("selectstatus").value.style.color="red";
+  // }
 });
 let headers=[{header:"#",key:"id"},{header:"Name",key:"fname"},{header:"Description",key:"desc"},{header:"Status",key:"statusselect"},{header:"Rate",key:"rate"},{header:"Balance",key:"balance"},{header:"Deposit",key:"deposit"}];
 let table=document.createElement("table");
@@ -118,58 +118,63 @@ ath.appendChild(atext);
 thr.appendChild(ath);
 let tbody=table.createTBody();
 fetch("http://localhost:3000/validate").then((response)=>response.json()).then((data)=>{
-    for (const element of data) {
-        // console.log(iterator);
-        let tr=tbody.insertRow();
-        for (const iterator of headers) {
-            let cell=tr.insertCell();
-           
-            let text=document.createTextNode(element[iterator["key"]]);+
-            cell.appendChild(text);
-        }
-        let atd=tr.insertCell();
-        tr.appendChild(atd);
-        let btnedit=document.createElement("button");
-        btnedit.classList.add("btneditdecor");
-        let btnedittext=document.createTextNode("Edit");
-        btnedit.appendChild(btnedittext);
-        let btndelete=document.createElement("button");
-        btndelete.classList.add("btndeletedecor");
-        let btndeletetext=document.createTextNode("Delete");
-        btndelete.appendChild(btndeletetext);
-        atd.appendChild(btnedit);
-        atd.appendChild(btndelete);
-        btndelete.addEventListener("click",deleteStudent);
-        function deleteStudent() {
-        fetch(`http://localhost:3000/validate/${element.id}`,{
-            method:"DELETE"
-        })}
-        btnedit.addEventListener("click",()=>{
-
-          document.getElementById("fname").value=element.fname;
-          document.getElementById("desc").value=element.desc;
-          document.getElementById("statusselect").value=element.statusselect;
-          document.getElementById("rate").value=element.rate;
-          document.getElementById("balance").value=element.balance;
-          document.getElementById("deposit").value=element.deposit;
-          let updatedata=document.getElementById("updatebtn");
-          updatedata.addEventListener("click",editData);
-          function editData() {
-              
-              fetch(`http://localhost:3000/validate/${element.id}`,{
-                  method:"PUT",
-                  body:JSON.stringify({fname:document.getElementById("fname").value,desc:document.getElementById("desc").value,statusselect:document.getElementById("statusselect").value,rate:document.getElementById("rate").value,balance:document.getElementById("balance").value,deposit:document.getElementById("deposit").value}),
-                  headers:{
-                      "Content-type": "application/json; charset=UTF-8"
-                  }
-              })
-           
-          }
-      });
-    }
+    createTableMain(data)
 }).catch((error)=>console.error(error));
 let body=document.querySelector("body");
 body.append(table);
+
+
+function createTableMain(data){
+  for (const element of data) {
+    // console.log(iterator);
+    let tr=tbody.insertRow();
+    for (const iterator of headers) {
+        let cell=tr.insertCell();
+       
+        let text=document.createTextNode(element[iterator["key"]]);+
+        cell.appendChild(text);
+    }
+    let atd=tr.insertCell();
+    tr.appendChild(atd);
+    let btnedit=document.createElement("button");
+    btnedit.classList.add("btneditdecor");
+    let btnedittext=document.createTextNode("Edit");
+    btnedit.appendChild(btnedittext);
+    let btndelete=document.createElement("button");
+    btndelete.classList.add("btndeletedecor");
+    let btndeletetext=document.createTextNode("Delete");
+    btndelete.appendChild(btndeletetext);
+    atd.appendChild(btnedit);
+    atd.appendChild(btndelete);
+    btndelete.addEventListener("click",deleteStudent);
+    function deleteStudent() {
+    fetch(`http://localhost:3000/validate/${element.id}`,{
+        method:"DELETE"
+    })}
+    btnedit.addEventListener("click",()=>{
+
+      document.getElementById("fname").value=element.fname;
+      document.getElementById("desc").value=element.desc;
+      document.getElementById("statusselect").value=element.statusselect;
+      document.getElementById("rate").value=element.rate;
+      document.getElementById("balance").value=element.balance;
+      document.getElementById("deposit").value=element.deposit;
+      let updatedata=document.getElementById("updatebtn");
+      updatedata.addEventListener("click",editData);
+      function editData() {
+          
+          fetch(`http://localhost:3000/validate/${element.id}`,{
+              method:"PUT",
+              body:JSON.stringify({fname:document.getElementById("fname").value,desc:document.getElementById("desc").value,statusselect:document.getElementById("statusselect").value,rate:document.getElementById("rate").value,balance:document.getElementById("balance").value,deposit:document.getElementById("deposit").value}),
+              headers:{
+                  "Content-type": "application/json; charset=UTF-8"
+              }
+          })
+       
+      }
+  });
+}
+}
 
 function searchFunction(){
   let filter=document.getElementById("searchinput").value.toUpperCase();
@@ -193,3 +198,14 @@ function searchFunction(){
 
 }
 searchFunction();
+
+
+function filterRecords(){
+  let selectinput=document.getElementById("filterr");
+  fetch("http://localhost:3000/validate").then((response)=>response.json()).then((data)=>{ 
+    let filter = data.filter(item=>item.statusselect==selectinput.value||selectinput.value=="Status")
+    tbody.innerHTML=""
+     createTableMain(filter)
+  })
+}
+
